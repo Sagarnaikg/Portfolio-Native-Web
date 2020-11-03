@@ -215,8 +215,11 @@ h4 {
 }
 
 #contact h3,
-.leading {
+#contactr .leading {
   text-align: center;
+}
+#contact h3 {
+  margin-bottom: 5px;
 }
 
 #contact form {
