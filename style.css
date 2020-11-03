@@ -209,13 +209,13 @@ h4 {
   margin: 10px auto;
 }
 
-/*-------  section section -------- */
+/*-------  contact section -------- */
 #contact {
   padding: 20px;
 }
 
 #contact h3,
-#contactr .leading {
+#contact .leading {
   text-align: center;
 }
 #contact h3 {
@@ -235,4 +235,32 @@ h4 {
 
 #contact form .button {
   align-self: center;
+}
+
+/*-------  footer section -------- */
+footer {
+  padding: 20px;
+  background-color: #14153d;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  grid-column: 1/4;
+}
+
+.social {
+  grid-column: 4/-1;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.social {
+  display: flex;
+}
+.social li {
+  margin: 0px 10px;
+}
+
+.social li img {
+  width: 25px;
 }
