@@ -208,3 +208,28 @@ h4 {
   height: 80px;
   margin: 10px auto;
 }
+
+/*-------  section section -------- */
+#contact {
+  padding: 20px;
+}
+
+#contact h3,
+.leading {
+  text-align: center;
+}
+
+#contact form {
+  max-width: 400px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#contact form * {
+  margin: 5px 0px;
+}
+
+#contact form .button {
+  align-self: center;
+}
