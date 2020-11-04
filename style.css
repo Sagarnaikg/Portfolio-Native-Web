@@ -3,6 +3,7 @@
   /* colors */
   --primary: #ffc636;
   --secondary: #0a0858;
+  --padding: 20px;
 }
 
 /***** resetting the default********/
@@ -124,7 +125,7 @@ h4 {
 }
 
 .site-nav {
-  margin: 20px;
+  margin: var(--padding);
 }
 
 .site-nav h1 {
@@ -137,7 +138,7 @@ h4 {
 
 /*--------  welcome section ----------*/
 #welcome {
-  padding: 0px 20px 20px 20px;
+  padding: var(--padding);
   overflow: hidden;
 }
 
@@ -159,15 +160,16 @@ h4 {
 
 /*-------  project section -------- */
 #portfolio {
-  padding: 20px 20px 0px 20px;
+  padding: 50px var(--padding);
   background: url("./assets/square_bg.png");
-  background-position: center;
+  background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 #portfolio h3 {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .projects a {
@@ -185,23 +187,33 @@ h4 {
   align-self: center;
 }
 
+.projects a img:hover {
+  transform: scale(1.05);
+}
+
 /*-------  skills section -------- */
 #skills {
-  padding: 20px;
+  padding: 50px var(--padding);
   background-color: #07083e;
 }
 
 #skills h3 {
   text-align: center;
+  margin-bottom: 20px;
 }
 #skills ul {
   text-align: center;
 }
 
 #skills ul li {
+  cursor: pointer;
   align-items: stretch;
   grid-column: span 4;
   margin: 20px;
+}
+
+#skills ul li:hover {
+  transform: scale(1.1);
 }
 
 #skills ul li img {
@@ -211,7 +223,7 @@ h4 {
 
 /*-------  contact section -------- */
 #contact {
-  padding: 20px;
+  padding: 50px var(--padding);
 }
 
 #contact h3,
@@ -239,8 +251,10 @@ h4 {
 
 /*-------  footer section -------- */
 footer {
-  padding: 20px;
+  padding: var(--padding);
   background-color: #14153d;
+  display: flex;
+  align-items: center;
 }
 
 .copyright {
@@ -261,6 +275,165 @@ footer {
   margin: 0px 10px;
 }
 
+.social li:hover {
+  transform: scale(1.15);
+}
+
 .social li img {
   width: 25px;
+}
+
+/* ****** tablet size******** */
+@media (min-width: 600px) {
+  :root {
+    --padding: 30px;
+  }
+  /*---------  nav bar ---------- */
+  .site-nav {
+    margin: 25px var(--padding);
+  }
+
+  .site-nav ul {
+    display: flex;
+    grid-column: 4/-1;
+    justify-self: end;
+  }
+  .site-nav ul li {
+    margin: 0 10px;
+  }
+  .site-nav ul li a:hover {
+    color: var(--primary);
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  /*--------  welcome section ----------*/
+  #welcome {
+    padding: 80px var(--padding) 80px var(--padding);
+  }
+  .welcome-img img {
+    width: 100%;
+  }
+  /*-------  project section -------- */
+  #portfolio {
+    padding: var(--padding) var(--padding) 0px 23px;
+  }
+
+  .projects a {
+    margin: 40px 0px;
+  }
+
+  .projects a img {
+    max-width: 40%;
+  }
+
+  /*-------  skills section -------- */
+  #skills {
+    padding: var(--padding);
+  }
+
+  #skills ul li {
+    margin: var(--padding);
+  }
+  /*-------  contact section -------- */
+  #contact {
+    padding: var(--padding);
+  }
+
+  #contact form {
+    max-width: 400px;
+    margin: var(--padding) auto;
+    display: flex;
+    flex-direction: column;
+  }
+  /* footer */
+  footer {
+    padding: 20px var(--padding);
+  }
+}
+
+@media (min-width: 800px) {
+  :root {
+    --padding: 40px;
+  }
+  /* --nav----- */
+  .site-nav {
+    margin: 25px var(--padding);
+  }
+  /* welcomne section */
+  #welcome {
+    padding: 100px var(--padding);
+  }
+  .welcome-txt .leading {
+    max-width: 450px;
+    margin: 20px 0px;
+  }
+
+  /* projects section */
+  #portfolio {
+    padding: 70px var(--padding) 70px var(--padding);
+  }
+  .projects a {
+    grid-column: span 2;
+    margin: 60px 0px;
+  }
+  .projects a:first-child {
+    grid-column: 2/4;
+  }
+  .projects a img {
+    margin: 0 20px;
+    max-width: 80%;
+  }
+  /*-------  skills section -------- */
+  #skills {
+    padding: 50px var(--padding);
+    background-color: #07083e;
+  }
+  #skills ul {
+    max-width: 600px;
+    margin: auto;
+  }
+  /* footer section */
+  footer {
+    padding: 20px var(--padding);
+  }
+
+  .copyright {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  /* nav-bar */
+  .site-nav {
+    max-width: 985px;
+    margin: auto;
+    padding: 25px var(--padding);
+  }
+  /*--------  welcome section ----------*/
+  #welcome {
+    margin: auto;
+    max-width: 980px;
+    padding: 130px var(--padding);
+  }
+  /*-------  project section -------- */
+  #portfolio {
+    padding: 50px var(--padding);
+  }
+  .projects {
+    margin: auto;
+    max-width: 900px;
+  }
+  /* skills section */
+  #skills ul {
+    max-width: 800px;
+    margin: auto;
+  }
+  #skills ul li {
+    grid-column: span 2;
+    margin: 70px;
+  }
+  #skills ul li img {
+    height: 100px;
+    margin-bottom: 30px;
+  }
 }
